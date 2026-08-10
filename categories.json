@@ -1,0 +1,313 @@
+{
+  "categories": {
+    "경제/경영": [
+      {
+        "name": "매일경제 - 경제",
+        "url": "https://www.mk.co.kr/rss/30100041/",
+        "type": "RSS"
+      },
+      {
+        "name": "매일경제 - 기업/경영",
+        "url": "https://www.mk.co.kr/rss/50100032/",
+        "type": "RSS"
+      },
+      {
+        "name": "매일경제 - 증권",
+        "url": "https://www.mk.co.kr/rss/50200011/",
+        "type": "RSS"
+      },
+      {
+        "name": "매일경제 - 부동산",
+        "url": "https://www.mk.co.kr/rss/50300009/",
+        "type": "RSS"
+      },
+      {
+        "name": "조선일보 - 경제",
+        "url": "https://www.chosun.com/arc/outboundfeeds/rss/category/economy/?outputType=xml",
+        "type": "RSS"
+      },
+      {
+        "name": "연합뉴스 - 경제",
+        "url": "https://www.yna.co.kr/rss/economy.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 경제",
+        "url": "https://rss.donga.com/economy.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 경제",
+        "url": "https://www.khan.co.kr/rss/rssdata/economy_news.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 전체뉴스",
+        "url": "https://www.hankyung.com/feed/all-news",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 증권",
+        "url": "https://www.hankyung.com/feed/finance",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 경제",
+        "url": "https://www.hankyung.com/feed/economy",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 부동산",
+        "url": "https://www.hankyung.com/feed/realestate",
+        "type": "RSS"
+      },
+      {
+        "name": "SBS - 경제",
+        "url": "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=02&plink=RSSREADER",
+        "type": "RSS"
+      },
+      {
+        "name": "Google News · 증권",
+        "url": "https://news.google.com/rss/search?q=%EC%A6%9D%EA%B6%8C&hl=ko&gl=KR&ceid=KR:ko",
+        "type": "GOOGLE_NEWS",
+        "keyword": "증권"
+      },
+      {
+        "name": "Google News · 비트코인",
+        "url": "https://news.google.com/rss/search?q=%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8&hl=ko&gl=KR&ceid=KR:ko",
+        "type": "GOOGLE_NEWS",
+        "keyword": "비트코인",
+        "source_id": 125,
+        "db_created": true
+      },
+      {
+        "name": "Google News · 경제",
+        "url": "https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C&hl=ko&gl=KR&ceid=KR:ko",
+        "type": "GOOGLE_NEWS",
+        "keyword": "경제",
+        "source_id": 165,
+        "db_created": true
+      },
+      {
+        "name": "국민일보 - 경제",
+        "url": "https://www.kmib.co.kr/rss/data/kmibEcoRss.xml",
+        "type": "RSS"
+      }
+    ],
+    "IT": [
+      {
+        "name": "한국경제 - IT",
+        "url": "https://www.hankyung.com/feed/it",
+        "type": "RSS"
+      },
+      {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/feed/",
+        "type": "RSS"
+      },
+      {
+        "name": "GeekNews",
+        "url": "https://news.hada.io/rss/news",
+        "type": "RSS"
+      },
+      {
+        "name": "HackerNews",
+        "url": "https://hnrss.org/frontpage",
+        "type": "RSS"
+      },
+      {
+        "name": "GitHub Changelog",
+        "url": "https://github.blog/changelog/feed/",
+        "type": "RSS"
+      },
+      {
+        "name": "Google News · 한화시스템",
+        "url": "https://news.google.com/rss/search?q=%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C&hl=ko&gl=KR&ceid=KR:ko",
+        "type": "GOOGLE_NEWS",
+        "keyword": "한화시스템",
+        "source_id": 166,
+        "db_created": true
+      }
+    ],
+    "국제": [
+      {
+        "name": "매일경제 - 국제",
+        "url": "https://www.mk.co.kr/rss/30300018/",
+        "type": "RSS"
+      },
+      {
+        "name": "연합뉴스 - 국제",
+        "url": "https://www.yna.co.kr/rss/international.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 국제",
+        "url": "https://rss.donga.com/international.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 국제",
+        "url": "https://www.khan.co.kr/rss/rssdata/kh_world.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 국제",
+        "url": "https://www.hankyung.com/feed/international",
+        "type": "RSS"
+      },
+      {
+        "name": "SBS - 국제",
+        "url": "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=07&plink=RSSREADER",
+        "type": "RSS"
+      },
+      {
+        "name": "한국매일뉴스 - 국제",
+        "url": "https://hgmn.co.kr/rss/international",
+        "type": "RSS"
+      },
+      {
+        "name": "Google News · 호르무즈",
+        "url": "https://news.google.com/rss/search?q=%ED%98%B8%EB%A5%B4%EB%AC%B4%EC%A6%88&hl=ko&gl=KR&ceid=KR:ko",
+        "type": "GOOGLE_NEWS",
+        "keyword": "호르무즈"
+      }
+    ],
+    "문화/건강": [
+      {
+        "name": "매일경제 - 문화/연예",
+        "url": "https://www.mk.co.kr/rss/30000023/",
+        "type": "RSS"
+      },
+      {
+        "name": "매일경제 - 스포츠",
+        "url": "https://www.mk.co.kr/rss/71000001/",
+        "type": "RSS"
+      },
+      {
+        "name": "조선일보 - 문화/라이프",
+        "url": "https://www.chosun.com/arc/outboundfeeds/rss/category/culture-life/?outputType=xml",
+        "type": "RSS"
+      },
+      {
+        "name": "조선일보 - 스포츠",
+        "url": "https://www.chosun.com/arc/outboundfeeds/rss/category/sports/?outputType=xml",
+        "type": "RSS"
+      },
+      {
+        "name": "연합뉴스 - 문화",
+        "url": "https://www.yna.co.kr/rss/culture.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "연합뉴스 - 건강",
+        "url": "https://www.yna.co.kr/rss/health.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "연합뉴스 - 스포츠",
+        "url": "https://www.yna.co.kr/rss/sports.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 문화연예",
+        "url": "https://rss.donga.com/culture.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 건강",
+        "url": "https://rss.donga.com/health.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 의학과학",
+        "url": "https://rss.donga.com/science.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 도서",
+        "url": "https://rss.donga.com/book.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 - 공연",
+        "url": "https://rss.donga.com/show.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 스포츠동아 - 야구&MLB",
+        "url": "https://rss.donga.com/sportsdonga/baseball.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 스포츠동아 - 축구",
+        "url": "https://rss.donga.com/sportsdonga/soccer.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 스포츠동아 - 골프",
+        "url": "https://rss.donga.com/sportsdonga/golf.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "동아일보 스포츠동아 - 엔터테인먼트",
+        "url": "https://rss.donga.com/sportsdonga/entertainment.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 문화",
+        "url": "https://www.khan.co.kr/rss/rssdata/culture_news.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 과학·환경",
+        "url": "https://www.khan.co.kr/rss/rssdata/science_news.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 라이프",
+        "url": "http://www.khan.co.kr/rss/rssdata/life_news.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 사람",
+        "url": "https://www.khan.co.kr/rss/rssdata/people_news.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "경향신문 - 스포츠",
+        "url": "https://www.khan.co.kr/rss/rssdata/kh_sports.xml",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 생활",
+        "url": "https://www.hankyung.com/feed/life",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 스포츠",
+        "url": "https://www.hankyung.com/feed/sports",
+        "type": "RSS"
+      },
+      {
+        "name": "한국경제 - 연예",
+        "url": "https://www.hankyung.com/feed/entertainment",
+        "type": "RSS"
+      },
+      {
+        "name": "SBS - 생활·문화",
+        "url": "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=08&plink=RSSREADER",
+        "type": "RSS"
+      },
+      {
+        "name": "SBS - 연예",
+        "url": "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=14&plink=RSSREADER",
+        "type": "RSS"
+      },
+      {
+        "name": "SBS - 스포츠",
+        "url": "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=09&plink=RSSREADER",
+        "type": "RSS"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "dbname": "news_collect",
+    "user": "postgres",
+    "password": "YOUR_PASSWORD"
+  }
+}

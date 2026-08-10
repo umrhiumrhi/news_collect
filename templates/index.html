@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Collect · RSS Pipeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="topbar">
+            <div class="topbar-brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M8 9h8M8 12.5h5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <strong>News Collect</strong>
+                    <span>RSS · Extract · Store</span>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <button id="testAllBtn" class="btn btn-ghost" type="button" title="모든 RSS 연결 테스트">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.5-1.5A9 9 0 1 1 3 12a9 9 0 0 1 17.5-1.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>테스트</span>
+                </button>
+                <button id="dbStatsBtn" class="btn btn-ghost" type="button" title="DB 저장 현황">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Zm0 6c0 1.7 3.6 3 8 3s8-1.3 8-3M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                    <span>DB 현황</span>
+                </button>
+                <button id="saveAllBtn" class="btn btn-primary" type="button" title="전체 RSS를 DB에 저장">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v12m0 0 4-4m-4 4-4-4M5 20h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>전체 DB 저장</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="shell">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="section-label">Categories</div>
+                    <div id="categories" class="category-list"></div>
+                </div>
+                <div class="sidebar-footer">
+                    <button id="addSourceBtn" class="btn btn-sidebar" type="button">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        출처 추가
+                    </button>
+                </div>
+            </aside>
+
+            <main class="workspace">
+                <section class="source-panel">
+                    <div class="source-panel-head">
+                        <div>
+                            <div class="section-label">Sources</div>
+                            <p id="sourcePanelHint" class="panel-hint">카테고리를 선택하면 소스가 표시됩니다</p>
+                        </div>
+                        <button id="editBtn" class="btn btn-ghost btn-sm" type="button">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span id="editBtnLabel">편집</span>
+                        </button>
+                    </div>
+                    <div id="sources" class="sources-list"></div>
+                </section>
+
+                <section id="results" class="results-area">
+                    <div class="empty-state">
+                        <div class="empty-visual" aria-hidden="true">
+                            <div class="empty-orb"></div>
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.4"/>
+                                <path d="M8 9.5h8M8 12.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h2>파이프라인을 시작하세요</h2>
+                        <p>왼쪽에서 카테고리를 고른 뒤 뉴스 소스를 선택하면<br>오늘 기사를 수집·추출합니다.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="loading" class="loading hidden" role="status" aria-live="polite">
+        <div class="loading-card loading-card-wide">
+            <div class="spinner"></div>
+            <p id="loadingTitle">수집 중…</p>
+            <span id="loadingDetail">준비 중</span>
+            <div class="loading-progress-meta">
+                <span id="loadingCount"></span>
+            </div>
+            <ul id="loadingLog" class="loading-log" aria-label="진행 로그"></ul>
+        </div>
+    </div>
+
+    <div id="testModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="testModalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 id="testModalTitle">RSS 연결 테스트</h2>
+                    <p class="modal-sub">전체 피드 상태 점검</p>
+                </div>
+                <button class="close-btn" type="button" aria-label="닫기">&times;</button>
+            </div>
+            <div id="testResults" class="test-results"></div>
+        </div>
+    </div>
+
+    <div id="addSourceModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <div>
+                    <h2 id="addModalTitle">출처 추가</h2>
+                    <p class="modal-sub">일반 RSS 또는 Google News 키워드</p>
+                </div>
+                <button class="close-btn" id="closeAddModal" type="button" aria-label="닫기">&times;</button>
+            </div>
+            <div class="add-source-form">
+                <div class="source-type-tabs" role="tablist" aria-label="출처 유형">
+                    <button type="button" class="source-type-tab selected" data-type="RSS" id="tabRss">일반 RSS</button>
+                    <button type="button" class="source-type-tab" data-type="GOOGLE_NEWS" id="tabGoogle">Google News</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="addCategory">카테고리</label>
+                    <select id="addCategory">
+                        <option value="">선택하세요</option>
+                    </select>
+                </div>
+
+                <!-- 일반 RSS 필드 -->
+                <div id="fieldsRss" class="add-fields">
+                    <div class="form-group">
+                        <label for="addName">출처 이름</label>
+                        <input type="text" id="addName" placeholder="예) 연합뉴스 - 경제" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="addUrl">RSS URL</label>
+                        <input type="url" id="addUrl" placeholder="https://…" autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+
+                <!-- Google News 필드 -->
+                <div id="fieldsGoogle" class="add-fields hidden">
+                    <div class="form-group">
+                        <label for="addKeyword">검색 키워드</label>
+                        <input type="text" id="addKeyword" placeholder="예) 인공지능, 금리 인상" autocomplete="off">
+                    </div>
+                    <p class="form-hint">키워드로 Google News RSS를 생성합니다. 기사마다 언론사가 표시되며, 파생 소스는 DB에 <strong>언론사 - 키워드 (GN)</strong> 으로 저장됩니다. 전체 저장 수집 대상에서는 제외됩니다.</p>
+                </div>
+
+                <div id="addSourceMsg" class="form-msg hidden"></div>
+                <div class="form-actions">
+                    <button class="btn btn-ghost" id="cancelAddSource" type="button">취소</button>
+                    <button class="btn btn-primary" id="submitAddSource" type="button">추가하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
